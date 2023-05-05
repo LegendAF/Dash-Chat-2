@@ -10,6 +10,7 @@
 * Added `spaceWhenAvatarIsMissing` message option
 * Added `timeFontSize` message option
 * Added `timeSpacing` message option
+* Fixed `ListView.builder()` automatically padding `MessageList`
 
 ## [0.0.15] - 03/10/2022
 
