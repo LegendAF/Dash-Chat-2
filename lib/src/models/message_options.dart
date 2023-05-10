@@ -13,7 +13,7 @@ class MessageOptions {
     this.onLongPressMessage,
     this.onPressMessage,
     this.onPressMention,
-    this.currentUserContainerColor = Colors.white,
+    this.currentUserContainerColor,
     this.currentUserTextColor = Colors.white,
     this.containerColor = const Color(0xFFF5F5F5),
     this.textColor = Colors.black,
@@ -35,10 +35,10 @@ class MessageOptions {
     this.currentUserTimeTextColor = Colors.white70,
     this.marginDifferentAuthor = const EdgeInsets.only(top: 15),
     this.marginSameAuthor = const EdgeInsets.only(top: 2),
-    this.otherUserTimeTextColor = Colors.black54,
-    this.spaceWhenAvatarIsMissing = 10.0,
+    this.spaceWhenAvatarIsHidden = 10.0,
     this.timeFontSize = 10.0,
-    this.timeSpacing = 5.0,
+    this.timePadding = const EdgeInsets.only(top: 5),
+    this.timeTextColor,
   });
 
   /// Format of the time if [showTime] is true
@@ -85,8 +85,8 @@ class MessageOptions {
 
   /// Color of the current user chat bubbles
   ///
-  /// Default to: `Colors.white`
-  final Color currentUserContainerColor;
+  /// Default to: `Theme.of(context).primaryColor`
+  final Color? currentUserContainerColor;
 
   /// Color of the current user text in chat bubbles
   ///
@@ -95,8 +95,8 @@ class MessageOptions {
 
   /// Color of current user time text in chat bubbles
   ///
-  /// Default to: `Colors.white70`
-  final Color currentUserTimeTextColor;
+  /// Default to: `currentUserTextColor`
+  final Color? currentUserTimeTextColor;
 
   /// Color of the other users chat bubbles
   ///
@@ -110,8 +110,8 @@ class MessageOptions {
 
   /// Color of other users time text in chat bubbles
   ///
-  /// Default to: `Colors.black54`
-  final Color otherUserTimeTextColor;
+  /// Default to: `textColor`
+  final Color? timeTextColor;
 
   /// Builder to create the entire message row yourself
   final Widget Function(
@@ -188,10 +188,10 @@ class MessageOptions {
   /// Default to: `const EdgeInsets.only(top: 2)`
   final EdgeInsets marginSameAuthor;
 
-  /// Space between chat bubble and edge of the list when avatar is missing
+  /// Space between chat bubble and edge of the list when avatar is hidden via [showOtherUsersAvatar] or [showCurrentUserAvatar]
   ///
   /// Default to: `10.0`
-  final double spaceWhenAvatarIsMissing;
+  final double spaceWhenAvatarIsHidden;
 
   /// Font size of the time text in chat bubbles
   ///
@@ -200,6 +200,6 @@ class MessageOptions {
 
   /// Space between time and message text in chat bubbles
   ///
-  /// Default to: `5.0`
-  final double timeSpacing;
+  /// Default to: `const EdgeInsets.only(top: 5)`
+  final EdgeInsets timePadding;
 }
