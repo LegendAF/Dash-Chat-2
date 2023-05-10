@@ -4,7 +4,7 @@ part of dash_chat_2;
 class DefaultScrollToBottom extends StatelessWidget {
   const DefaultScrollToBottom({
     required this.scrollController,
-    this.readOnly = false,
+    required this.readOnly,
     this.backgroundColor,
     this.textColor,
     this.bottom = 10.0,

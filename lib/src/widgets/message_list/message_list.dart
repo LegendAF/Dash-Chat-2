@@ -5,7 +5,7 @@ class MessageList extends StatefulWidget {
   const MessageList({
     required this.currentUser,
     required this.messages,
-    this.readOnly = false,
+    required this.readOnly,
     this.messageOptions = const MessageOptions(),
     this.messageListOptions = const MessageListOptions(),
     this.quickReplyOptions = const QuickReplyOptions(),
